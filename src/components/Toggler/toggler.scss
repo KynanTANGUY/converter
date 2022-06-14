@@ -1,0 +1,50 @@
+@use 'src/styles/vars';
+
+.toggler {
+  background-color: vars.$lightColor;
+  border: 3px solid vars.$primaryColor;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: -20px auto;
+  color: vars.$primaryColor;
+  transition: transform 0.2s ease-in;
+
+  &:hover {
+    background-color: vars.$altColor;
+  }
+
+  &--open {
+    transform: rotate(90deg);
+  }
+  
+  &__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 4px;
+      background-color: vars.$primaryColor;
+      position: absolute;
+      left: 4px;
+      right: 4px;
+      top: 10px;
+    }
+
+    &::after {
+      content: '';
+      height: 4px;
+      background-color: vars.$primaryColor;
+      position: absolute;
+      left: 4px;
+      right: 4px;
+      bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use 'src/styles/vars';
+
+.currencies {
+  background-color: vars.$lightColor;
+  color: vars.$primaryColor;
+  overflow-y: scroll;
+  // scrollbar pour firefox
+  scrollbar-color: vars.$primaryColor #cfb9b2;
+  transition: height 0.2s ease-in;
+  height: 0;
+
+  &--open {
+    height: 300px;
+  }
+
+  // scrollbar pour webkit
+  &::-webkit-scrollbar {
+    background-color: #cfb9b2;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: vars.$primaryColor;
+  }
+
+
+
+  &__title {
+    font-weight: bold;
+    padding: 0.8rem;
+  }
+
+  &__list {
+    cursor: pointer;
+
+    &__item {
+      border-top: 1px solid #DFCBC4;
+      padding: 0.8rem;
+      transition: background-color 1s ease-in;
+      font-weight: 500;
+
+      &:hover {
+        background-color: vars.$altColor;
+        transition: background-color 0.2s ease-in;
+      }
+    }
+  }
+}
